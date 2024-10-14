@@ -5,8 +5,7 @@ The website fosters a strong community of cooking enthusiasts, creating a platfo
 ## Team Members and Roles
 
 * [Aman Prajapathi](https://github.com/Amanrsp/CIS641-HW2-Prajapati) (Frontend and Backend)
-* [Venakata Jayam Pasam](https://github.com/Pasamv/CIS641-HW2-PASAM) (Development & Desinging)
-* Member 3 (Role 5, Role 6)
+* [Venakata Jayam Pasam](https://github.com/Pasamv/CIS641-HW2-PASAM) (Development & Designing)
 
 ## Prerequisites
 
