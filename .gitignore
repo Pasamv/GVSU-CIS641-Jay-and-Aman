@@ -1,0 +1,4 @@
+# Ignore the virtual environment folder
+/src/backend/env/
+# Ignore the actual config file
+/src/backend/app/config.py
