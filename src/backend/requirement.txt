@@ -1,3 +1,4 @@
 #this creates the virtual environment.
 python -m venv env 
 env\Scripts\activate
+flask_cors
