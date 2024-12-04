@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import {CreateRecipe} from "../utils/api";
+
 function PostRecipe()
 {
     const [title, setTitle] = useState("");
@@ -7,16 +9,11 @@ function PostRecipe()
     const [instructions, setInstructions] = useState("");
 
     const handleSubmit = () => {
-            //#TODO: send the recipe to database.
-        // axios.post("http://localhost:5000/recipes", {
-        //     title,
-        //     ingredients,
-        //     instructions,
-        // });
+        const response = CreateRecipe(title,ingredients,instructions);
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <div>
             <input
                 type="text"
                 value={title}
@@ -33,8 +30,8 @@ function PostRecipe()
                 onChange={(e) => setInstructions(e.target.value)}
                 placeholder="Instructions"
             />
-            <button type="submit">Post Recipe</button>
-        </form>
+            <button type="submit" onClick={handleSubmit}>Post Recipe</button>
+        </div>
     );
 
 }
