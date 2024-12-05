@@ -1,6 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 function RecipeCard(props)
 {
-    // use appropriate styles return them.
-    return <h1>styling</h1>
+    const navigate = useNavigate();
+    const recipe=props.recipe;
+    return <div onClick={()=>navigate("/recipe/"+recipe.recipe_id,{ state: recipe })}><h1>
+        {props.recipe.title},{recipe.recipe_id}</h1>
+    </div>
 }
 export default RecipeCard;

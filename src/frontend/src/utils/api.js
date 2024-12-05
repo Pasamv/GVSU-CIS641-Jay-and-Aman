@@ -8,10 +8,10 @@ export async function GetRecipes(query)
         console.log(response.ok);
         const data = await response.json();
         console.log("Recipes fetched",data);
-        return data;
+        return data["recipe_name"];
     } else {
-        // Display error message to the user
-        throw new Error('Failed to fetch Recipes');
+        console.error("Error fetching recipes:", error);
+        return [];
     }
 }
 
@@ -39,7 +39,48 @@ export async function CreateRecipe(title,ingredients,instructions)
     } 
     else {
         // Display error message to the user
-        throw new Error('Failed to Post Recipe');
+        console.error('Failed to Post Recipe');
     }
 }
 
+export async function GetReviews(recipe_id)
+{
+    const response = await fetch("http://127.0.0.1:5000/reviews/"+recipe_id,{
+        method : "GET",
+      })
+      if (response.ok) {
+          console.log(response.ok);
+          const data = await response.json();
+          console.log("Reviews fetched",data);
+          return data;
+      } else {
+          console.error("Error fetching reviews:", error);
+      }
+}
+
+export async function CreateReview(review,recipe_id)
+{
+    const ReviewData={
+        review:review,
+        recipe_id:recipe_id
+    }
+    const headers={
+        'Content-Type': 'application/json',
+        'Authorization':`Bearer ${localStorage.getItem('jwt_token')}`
+    }
+    const response = await fetch("http://127.0.0.1:5000/post_review",{
+        method : "POST",
+        headers: headers,
+        body:JSON.stringify(ReviewData)
+    })
+    if (response.ok) {
+        console.log(response.ok);
+        const data = await response.json();
+        console.log("Review Posted",data);
+        return true;
+    } 
+    else {
+        // Display error message to the user
+        console.error('Failed to Post Review');
+    }
+}
