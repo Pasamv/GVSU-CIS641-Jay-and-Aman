@@ -5,7 +5,7 @@ const HomePage = () => {
     console.log("homepage re-rendering");
     return <div>
         <h1>Home Page</h1>
-        <RecipesList search="top"/>
+        <RecipesList query="top"/>
     </div>
 };
 
