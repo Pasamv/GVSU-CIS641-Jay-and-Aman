@@ -1,13 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 const SearchBar = () => {
+    console.log("search bar rendering");
+
     const [query, setQuery] = React.useState("");
     const navigate = useNavigate();
-    console.log("search bar rendering.");
 
     function redirect()
     {
-        navigate("/search", { state: { query } });
+        const temp=query;
+        setQuery("");
+        navigate("/search", { state: { temp } });
     }
 
     return (

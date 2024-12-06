@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 const RecipesList = (props) =>{
     // fetch newly added recipies if props.search="" else search it with that key.
     // then display them using recipe card.
+    console.log("recipes list rendering");
     console.log("prop that we got is",props);
     const [data,setData]= useState([])
     async function get()
     {
         const respose = await GetRecipes(props.query);
-        console.log(respose);
         setData(respose);
     }
     useEffect(()=>{get()},[props.query]);

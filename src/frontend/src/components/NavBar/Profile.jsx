@@ -1,7 +1,9 @@
+import { useContext } from "react";
+import UserContext from "../../contexts/UserContext";
 function Profile()
 {
-    //#TODO: get user profile picture and Name from usercontext.
-    //#ASK: User Context
-    return <h1>profile</h1> //user
+    console.log("profile rendering");
+    const {user,setUser}=useContext(UserContext);
+    return <h1>{user?user["first_name"]:""}</h1> //user
 }
 export default Profile;
