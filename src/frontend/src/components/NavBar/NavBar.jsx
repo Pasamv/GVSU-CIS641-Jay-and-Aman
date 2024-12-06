@@ -1,22 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import UserContext from "../../contexts/UserContext";
+import { useNavigate } from "react-router-dom";
 
 import SearchBar from "./SearchBar";
 import Logo from "./Logo";
-import Login from "./Login";
+import Logout from "./Logout";
 import Profile from "./Profile"
 
 function NavBar(props)
 {
-    const userLogged=true;
-    const user=<>
+    console.log("navbar rendering");
+    const navigate = useNavigate();
+    const {user,setUser}=useContext(UserContext);
+    console.log("user is ",user);
+    const user_logged=<div> 
         <Profile />
         <Link to="/post">Post Recipe</Link>
-        <h1>Logout</h1> 
-    </>;
-    //TODO: logout has to be related to user context.
-    const show_element = userLogged?user:<Login />;
-    console.log("navbar rendering");
+        <Logout />
+    </div>;
+    const show_element = (user && Object.keys(user).length)?user_logged:<h1 onClick={()=>navigate("/login")}>Login</h1>;
     return <div style={{display:"-webkit-box"}}>
         <Link to="/"><Logo/></Link>
         <SearchBar />
