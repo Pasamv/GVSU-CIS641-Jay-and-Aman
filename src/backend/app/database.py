@@ -1,12 +1,12 @@
 from pymongo import MongoClient
 from urllib.parse import quote_plus
-# from app.Config import config
 
+from . import config
 
-# username = config.DATABASE['user']
-# password = config.DATABASE['password']
-username=quote_plus("pasamv")
-password=quote_plus("sFRw8n2LLg0g7lpC")
+username = config.DATABASE['user']
+password = config.DATABASE['password']
+username=quote_plus(username)
+password=quote_plus(password)
 
 def connect_to_database():
     try:
