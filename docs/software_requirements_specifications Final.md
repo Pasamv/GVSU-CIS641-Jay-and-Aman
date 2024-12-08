@@ -158,19 +158,17 @@ No platform is perfect at launch, so a strong plan to address issues is critical
 
 | Artifact ID      | Artifact Name          | Requirement ID          |
 | :--------------: | :--------------------: | :---------------------: |
-| Activity1        | Registration Workflow  | FR1, FR2, NFR12         |
-| Activity2        | Recipe Posting Workflow| FR6, FR7, NFR11         |
-| Activity3        | Review Posting Workflow| FR11, FR12, FR13, NFR13 |
+| Activity1        | Registration Workflow  | FR1       |
+| Activity2        | Recipe Posting Workflow| FR6, FR7         |
+| Activity3        | Review Posting Workflow| FR11, FR12 |
 
 # Software Artifacts
 
 This section provides links to all the artifacts developed for the project.
 
-- [Data Base Diagrams](https://github.com/Pasamv/GVSU-CIS641-Jay-and-Aman/blob/main/docs/Database%20Diagrams.png)
-- [Class Diagram](link_to_class_diagram.pdf)
-- [Activity Diagram - User Registration]()
-- [Activity Diagram - Recipe Posting]()
-- [Activity Diagram - Review Posting]()
-- [Use Case Diagram]()
+- [Database Diagrams](https://github.com/Pasamv/GVSU-CIS641-Jay-and-Aman/blob/main/docs/Database%20Diagrams.png)
+- [Class Diagram](https://github.com/Pasamv/GVSU-CIS641-Jay-and-Aman/blob/main/docs/Class%20Diagrams.pdf)
+- [Activity Diagram](https://github.com/Pasamv/GVSU-CIS641-Jay-and-Aman/blob/main/docs/Use%20Case%20Diagrams%20%26%20Activity%20Diagrams.pdf)
+- [Sequence Diagram](https://github.com/Pasamv/GVSU-CIS641-Jay-and-Aman/blob/main/docs/Sequence%20Diagrams.pdf)
 
 
