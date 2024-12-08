@@ -31,13 +31,14 @@ def search():
         print(recipe_title)
         if(recipe_title=="top"):
             res = database.find("recipe",{})
+            res = sorted(res,key=lambda x:x["title"])
         else:
             res = database.find("recipe",{})
             matched_list = []
             for recipe in res:
                 if(recipe_title.lower() in recipe["title"].lower()):
                     matched_list.append(recipe)
-            return jsonify(matched_list),200
+            res = sorted(matched_list,key=lambda x:x["title"])
         return jsonify(res),200
     except Exception as e:
         print("Error occured in search: ",e)
@@ -59,6 +60,7 @@ def reviews(recipe_id):
     try:
         print(recipe_id)
         res=database.find("review",{"recipe_id":recipe_id})
+        res = sorted(res, key=lambda x: x["review"])
         return jsonify(res),200
     except Exception as e:
         print("Error occured in fecthing reviews is: ",e)
@@ -74,8 +76,13 @@ def post_review():
         review=data.get("review")
         recipe_id=data.get("recipe_id")
         first_name=data.get("first_name")
-        print(recipe_id, review)
-        database.create("review", {"first_name":first_name,"recipe_id":recipe_id,"review":review})
+        if(user_id=="null" or not user_id):
+            raise Exception("user should login to give review")
+        print(user_id, review,type(user_id))
+        reviews = database.find_one("review",{"recipe_id":recipe_id, "user_id":user_id})
+        if(reviews):
+            raise Exception("user already gave review")
+        database.create("review", {"first_name":first_name,"recipe_id":recipe_id,"review":review,"user_id":user_id})
         return jsonify({'message':'Successfully added the review to the recipe'}), 200
     except Exception as e:
         print("Error occured in posting review is: ",e)
