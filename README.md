@@ -1,6 +1,6 @@
 # Cooking Recipes Blog - Jay and Aman
 
-The Cooking Recipes Blog fosters a strong community of cooking enthusiasts. This platform allows users to connect, share, and learn from each other through posting, liking, and sharing recipes, promoting engagement and interaction.
+This Cooking Recipes Blog fosters a strong community of cooking enthusiasts. This platform allows users to connect, share, and learn from each other through posting, liking, and sharing recipes, promoting engagement and interaction.
 
 ## Team Members and Roles
 
@@ -22,8 +22,8 @@ Follow these steps to set up and run the Cooking Recipes Blog locally:
 ### Backend Setup
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-repo/cooking-recipes-blog.git
-   cd cooking-recipes-blog
+   git clone https://github.com/Pasamv/GVSU-CIS641-Jay-and-Aman.git
+   cd GVSU-CIS641-Jay-and-Aman/src/backend
    ```
 
 2. **Set up a Virtual Environment**:
@@ -36,6 +36,7 @@ Follow these steps to set up and run the Cooking Recipes Blog locally:
    ```bash
    pip install flask
    pip install flask_cors
+   pip install pymongo
    ```
 
 4. **Run the Backend Server**:
@@ -47,7 +48,7 @@ Follow these steps to set up and run the Cooking Recipes Blog locally:
 ### Frontend Setup
 1. **Navigate to the Frontend Folder**:
    ```bash
-   cd frontend
+   cd GVSU-CIS641-Jay-and-Aman/src/frontend
    ```
 
 2. **Install Frontend Dependencies**:
@@ -63,11 +64,4 @@ Follow these steps to set up and run the Cooking Recipes Blog locally:
 ### Access the Application
 - Open your browser and navigate to `http://localhost:3000` to access the Cooking Recipes Blog.
 
-## Contributing
-
-We welcome contributions to improve the Cooking Recipes Blog. To contribute:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Submit a pull request once your changes are tested.
 
