@@ -19,12 +19,34 @@ export async function GetRecipes(query)
     }
 }
 
-export async function CreateRecipe(title,ingredients,instructions)
+export async function GetRecipe(recipe_id)
+{
+    const response = await fetch("http://127.0.0.1:5000/recipe/"+recipe_id,{
+      method : "GET",
+    })
+    try{
+    if (response.ok) {
+        const data = await response.json();
+        console.log("Recipe fetched",data);
+        return data;
+    } else {
+        console.error(`Error fetching Recipe: ${response.status} - ${response.statusText}`);
+        return [];
+    }
+    } catch (error) {
+        console.error("Failed to fetch Recipe:", error);
+        return null;
+    }
+}
+
+export async function CreateRecipe(title,ingredients,instructions,first_name,user_id)
 {
     const RecipeData={
         title:title,
         ingredients:ingredients,
-        instructions:instructions
+        instructions:instructions,
+        first_name:first_name,
+        user_id:user_id
     }
     const headers={
         'Content-Type': 'application/json',

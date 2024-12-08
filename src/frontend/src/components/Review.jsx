@@ -1,24 +1,32 @@
 import { useState } from "react";
 
-import {CreateReview} from "../utils/api";
+import { CreateReview } from "../utils/api";
 
-function Review({recipe_id})
-{
+function Review({ recipe_id }) {
     const [review, setReview] = useState("");
-    
-    const handleSubmit = () => {
-        const response = CreateReview(review,recipe_id); //user
+
+    const handleSubmit = async () => {
+        await CreateReview(review, recipe_id);
+        setReview("");
     };
 
     return (
-        <div>
+        <div className="review-container">
             <textarea
+                className="review-textarea"
                 value={review}
                 onChange={(e) => setReview(e.target.value)}
-                placeholder="Review"
+                placeholder="Write your review..."
             />
-            <button type="submit" onClick={handleSubmit}>Add Recipe</button>
+            <button
+                className="review-submit-button"
+                type="submit"
+                onClick={handleSubmit}
+            >
+                Add Review
+            </button>
         </div>
     );
 }
+
 export default Review;

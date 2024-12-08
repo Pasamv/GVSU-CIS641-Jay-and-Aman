@@ -1,5 +1,6 @@
+import logo from "../../images/logo.png"
 function Logo()
 {
-    return <h1>Logo</h1>
+    return <img src={logo} alt="Logo" />;
 }
 export default Logo;
