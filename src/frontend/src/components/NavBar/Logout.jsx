@@ -1,15 +1,20 @@
 import { useContext } from "react";
 import UserContext from "../../contexts/UserContext";
 
-function Logout()
-{
+function Logout() {
     console.log("logout rendering");
-    const {user,setUser}=useContext(UserContext);
-    function fun()
-    {
+    const { user, setUser } = useContext(UserContext);
+
+    function handleLogout() {
         localStorage.removeItem("jwt_token");
         setUser({});
     }
-    return <h1 onClick={fun}>Logout</h1>
+
+    return (
+        <div className="logout-container" onClick={handleLogout}>
+            <h1 className="logout-text">Logout</h1>
+        </div>
+    );
 }
+
 export default Logout;

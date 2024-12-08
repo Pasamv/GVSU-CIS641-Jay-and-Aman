@@ -6,7 +6,6 @@ import PostRecipe from "./pages/PostRecipe";
 import NavBar from "./components/NavBar/NavBar";
 import BottomInfo from "./pages/BottomInfo";
 import Working from "./pages/Working";
-import './App.css';
 import RecipeSearch from "./pages/RecipeSearch";
 import { UserProvider } from "./contexts/UserContext";
 
