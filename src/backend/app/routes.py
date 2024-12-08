@@ -45,8 +45,9 @@ def search():
 
 @app.route('/recipe/<recipe_id>',methods=["GET"])
 def recipe(recipe_id):
+    print(recipe_id)
     try:
-        recipe = database.find_one("recipe",recipe_id)
+        recipe = database.find_one("recipe",{"recipe_id":recipe_id})
         if(recipe):
             return recipe,200
     except Exception as e:
